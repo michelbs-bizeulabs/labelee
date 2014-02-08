@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		96F38BD922F44FCA92DFEC8E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AA4812409BE45CF8ABE7EC1 /* libPods.a */; };
+		D0074DCB18A668EA0047890F /* LAScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0074DC918A668E90047890F /* LAScanViewController.m */; };
+		D0074DCC18A668EA0047890F /* LAScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0074DCA18A668E90047890F /* LAScanViewController.xib */; };
+		D0074DD018A669940047890F /* LABrowserViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0074DCE18A669940047890F /* LABrowserViewController.m */; };
+		D0074DD118A669940047890F /* LABrowserViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0074DCF18A669940047890F /* LABrowserViewController.xib */; };
 		D0543D9118A6545200BA5671 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0543D9018A6545200BA5671 /* Foundation.framework */; };
 		D0543D9318A6545200BA5671 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0543D9218A6545200BA5671 /* CoreGraphics.framework */; };
 		D0543D9518A6545200BA5671 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D0543D9418A6545200BA5671 /* UIKit.framework */; };
@@ -32,6 +37,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		2F1D97A973EC4BD9A346587E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		3AA4812409BE45CF8ABE7EC1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D0074DC818A668E90047890F /* LAScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAScanViewController.h; sourceTree = "<group>"; };
+		D0074DC918A668E90047890F /* LAScanViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LAScanViewController.m; sourceTree = "<group>"; };
+		D0074DCA18A668E90047890F /* LAScanViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LAScanViewController.xib; sourceTree = "<group>"; };
+		D0074DCD18A669940047890F /* LABrowserViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LABrowserViewController.h; sourceTree = "<group>"; };
+		D0074DCE18A669940047890F /* LABrowserViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LABrowserViewController.m; sourceTree = "<group>"; };
+		D0074DCF18A669940047890F /* LABrowserViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LABrowserViewController.xib; sourceTree = "<group>"; };
 		D0543D8D18A6545200BA5671 /* labelee.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = labelee.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0543D9018A6545200BA5671 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D0543D9218A6545200BA5671 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -58,6 +71,7 @@
 				D0543D9318A6545200BA5671 /* CoreGraphics.framework in Frameworks */,
 				D0543D9518A6545200BA5671 /* UIKit.framework in Frameworks */,
 				D0543D9118A6545200BA5671 /* Foundation.framework in Frameworks */,
+				96F38BD922F44FCA92DFEC8E /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +95,7 @@
 				D0543DAF18A6545200BA5671 /* labeleeTests */,
 				D0543D8F18A6545200BA5671 /* Frameworks */,
 				D0543D8E18A6545200BA5671 /* Products */,
+				2F1D97A973EC4BD9A346587E /* Pods.xcconfig */,
 			);
 			sourceTree = "<group>";
 		};
@@ -100,6 +115,7 @@
 				D0543D9218A6545200BA5671 /* CoreGraphics.framework */,
 				D0543D9418A6545200BA5671 /* UIKit.framework */,
 				D0543DA918A6545200BA5671 /* XCTest.framework */,
+				3AA4812409BE45CF8ABE7EC1 /* libPods.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -111,6 +127,12 @@
 				D0543DA018A6545200BA5671 /* LAAppDelegate.m */,
 				D0543DA218A6545200BA5671 /* Images.xcassets */,
 				D0543D9718A6545200BA5671 /* Supporting Files */,
+				D0074DC818A668E90047890F /* LAScanViewController.h */,
+				D0074DC918A668E90047890F /* LAScanViewController.m */,
+				D0074DCA18A668E90047890F /* LAScanViewController.xib */,
+				D0074DCD18A669940047890F /* LABrowserViewController.h */,
+				D0074DCE18A669940047890F /* LABrowserViewController.m */,
+				D0074DCF18A669940047890F /* LABrowserViewController.xib */,
 			);
 			path = labelee;
 			sourceTree = "<group>";
@@ -151,9 +173,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D0543DB918A6545200BA5671 /* Build configuration list for PBXNativeTarget "labelee" */;
 			buildPhases = (
+				6B3077B801004C80B0676628 /* Check Pods Manifest.lock */,
 				D0543D8918A6545200BA5671 /* Sources */,
 				D0543D8A18A6545200BA5671 /* Frameworks */,
 				D0543D8B18A6545200BA5671 /* Resources */,
+				3EE97CFC1DEE411A97D514EF /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -220,7 +244,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0074DD118A669940047890F /* LABrowserViewController.xib in Resources */,
 				D0543D9B18A6545200BA5671 /* InfoPlist.strings in Resources */,
+				D0074DCC18A668EA0047890F /* LAScanViewController.xib in Resources */,
 				D0543DA318A6545200BA5671 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -235,12 +261,47 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		3EE97CFC1DEE411A97D514EF /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6B3077B801004C80B0676628 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		D0543D8918A6545200BA5671 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D0074DD018A669940047890F /* LABrowserViewController.m in Sources */,
 				D0543D9D18A6545200BA5671 /* main.m in Sources */,
+				D0074DCB18A668EA0047890F /* LAScanViewController.m in Sources */,
 				D0543DA118A6545200BA5671 /* LAAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -357,6 +418,7 @@
 		};
 		D0543DBA18A6545200BA5671 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F1D97A973EC4BD9A346587E /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -370,6 +432,7 @@
 		};
 		D0543DBB18A6545200BA5671 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2F1D97A973EC4BD9A346587E /* Pods.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
@@ -442,6 +505,7 @@
 				D0543DBB18A6545200BA5671 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D0543DBC18A6545200BA5671 /* Build configuration list for PBXNativeTarget "labeleeTests" */ = {
 			isa = XCConfigurationList;
@@ -450,6 +514,7 @@
 				D0543DBE18A6545200BA5671 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>698A06E7-D75E-4853-AE3C-B8A9E88C3802</string>
+	<key>IDESourceControlProjectName</key>
+	<string>labelee</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>721532B4-9E2D-4BB6-ACA1-C60F8B057AA0</key>
+		<string>https://github.com/michelbs-bizeulabs/labelee.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>labelee/labelee.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>721532B4-9E2D-4BB6-ACA1-C60F8B057AA0</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/michelbs-bizeulabs/labelee.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>721532B4-9E2D-4BB6-ACA1-C60F8B057AA0</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>721532B4-9E2D-4BB6-ACA1-C60F8B057AA0</string>
+			<key>IDESourceControlWCCName</key>
+			<string>labelee-REPO</string>
+		</dict>
+	</array>
+</dict>
+</plist>

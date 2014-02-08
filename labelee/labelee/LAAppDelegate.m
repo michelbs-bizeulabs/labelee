@@ -7,6 +7,7 @@
 //
 
 #import "LAAppDelegate.h"
+#import "LAScanViewController.h"
 
 @implementation LAAppDelegate
 
@@ -14,6 +15,12 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    LAScanViewController *scanVC = [[LAScanViewController alloc]init];
+    
+    UINavigationController *navigationController = [[UINavigationController alloc]initWithRootViewController:scanVC];
+    self.window.rootViewController = navigationController;
+    
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     return YES;
