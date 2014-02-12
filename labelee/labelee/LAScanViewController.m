@@ -8,6 +8,9 @@
 
 #import "LAScanViewController.h"
 #import "LABrowserViewController.h"
+#import "GAI.h"
+#import "GAIDictionaryBuilder.h"
+
 
 @interface LAScanViewController ()
 
@@ -95,6 +98,8 @@
 - (void) viewDidAppear: (BOOL) animated
 {
     [super viewDidAppear:animated];
+    self.screenName = @"Scan Screen";
+    
     // run the reader when the view is visible
     [self.zbarReaderView start];
 }
@@ -118,6 +123,12 @@
     NSLog(@"MOSTRAMOS EL MAPA SIN POSICIONAR");
     
     NSURL *url = [NSURL URLWithString:@"http://labelee.com/appmobile"];
+    
+    // May return nil if a tracker has not already been initialized with a property
+    // ID.
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Map_action" action:@"show_unlocated_map" label:@"http://labelee.com/appmobile" value:nil]build]];
     
     
     LABrowserViewController *browserVC = [[LABrowserViewController alloc]initWithURL:url];
@@ -158,7 +169,11 @@
         
        NSURL *url = [NSURL URLWithString:urlString];
         
-       // NSURL *url = [NSURL URLWithString:@"http://www.google.com"];
+        // May return nil if a tracker has not already been initialized with a property
+        // ID.
+        id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+        
+        [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Zbar_scan" action:@"scanned_code" label:urlString value:nil]build]];
         
         LABrowserViewController *browserVC = [[LABrowserViewController alloc]initWithURL:url];
         

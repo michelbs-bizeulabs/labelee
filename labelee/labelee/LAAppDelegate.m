@@ -8,6 +8,7 @@
 
 #import "LAAppDelegate.h"
 #import "LAScanViewController.h"
+#import "GAI.h"
 
 @implementation LAAppDelegate
 
@@ -15,6 +16,10 @@
 {
     self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
     // Override point for customization after application launch.
+    
+    // Do other work for customization after application launch
+    // then initialize Google Analytics.
+    [self initializeGoogleAnalytics];
     
     LAScanViewController *scanVC = [[LAScanViewController alloc]init];
     
@@ -25,6 +30,28 @@
     [self.window makeKeyAndVisible];
     return YES;
 }
+
+- (void)initializeGoogleAnalytics {
+    
+    //    [[GAI sharedInstance] setDispatchInterval:kGaDispatchPeriod];
+    //    [[GAI sharedInstance] setDryRun:kGaDryRun];
+    //    self.tracker = [[GAI sharedInstance] trackerWithTrackingId:kGaPropertyId];
+    
+    // Optional: automatically send uncaught exceptions to Google Analytics.
+    [GAI sharedInstance].trackUncaughtExceptions = YES;
+    
+    // Optional: set Google Analytics dispatch interval to e.g. 20 seconds.
+    [GAI sharedInstance].dispatchInterval = 20;
+    
+    // Optional: set Logger to VERBOSE for debug information.
+    [[[GAI sharedInstance] logger] setLogLevel:kGAILogLevelVerbose];
+    
+    // Initialize tracker.
+    id<GAITracker> tracker = [[GAI sharedInstance] trackerWithTrackingId:@"UA-47991991-1"]; //iOS UA-46682808-1  Mobile-iOS/Android UA-44950682-3
+    [GAI sharedInstance].defaultTracker = tracker;
+    
+}
+
 
 - (void)applicationWillResignActive:(UIApplication *)application
 {

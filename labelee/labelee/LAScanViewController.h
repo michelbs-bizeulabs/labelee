@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "ZBarSDK.h"
+#import "GAITrackedViewController.h"
 
-@interface LAScanViewController : UIViewController <ZBarReaderViewDelegate>
+@interface LAScanViewController : GAITrackedViewController <ZBarReaderViewDelegate>
 @property (weak, nonatomic) IBOutlet ZBarReaderView *zbarReaderView;
 
 @property (strong, nonatomic)  UIView *frameView;

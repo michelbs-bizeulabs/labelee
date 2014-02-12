@@ -7,8 +7,9 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "GAITrackedViewController.h"
 
-@interface LABrowserViewController : UIViewController <UIWebViewDelegate>
+@interface LABrowserViewController : GAITrackedViewController <UIWebViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *browserView;
 @property (weak, nonatomic) IBOutlet UIActivityIndicatorView *loading;

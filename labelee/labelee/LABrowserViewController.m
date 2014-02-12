@@ -29,15 +29,18 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    // Set screen name.
+    self.screenName = @"Browser Screen";
+    
     // asignar el delegado , en este caso el mismo controlador
     self.browserView.delegate = self;
     
     // Cargamos la pagina
     [self.browserView loadRequest:[NSURLRequest requestWithURL:self.url]];
-    
-    
-    
+  
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {
