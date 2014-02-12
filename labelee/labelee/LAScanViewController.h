@@ -12,6 +12,8 @@
 @interface LAScanViewController : UIViewController <ZBarReaderViewDelegate>
 @property (weak, nonatomic) IBOutlet ZBarReaderView *zbarReaderView;
 
+@property (strong, nonatomic)  UIView *frameView;
 
+@property (strong, nonatomic)  UILabel *instructionLabel;
 
 @end

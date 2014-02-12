@@ -20,6 +20,8 @@
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
         // Custom initialization
+        
+        
     }
     return self;
 }
@@ -29,19 +31,79 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
+    UILabel *titleLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.navigationController.view.bounds.size.width/2 - 50 + 10, self.navigationController.view.bounds.origin.y + 26, 100, 20)];
+    
+    titleLabel.text = @"labelee";
+    titleLabel.font = FONT_LABELEE(20);
+    titleLabel.textAlignment = NSTextAlignmentCenter;
+    
+    [self.navigationController.view addSubview:titleLabel];
+    
+    
+    UILabel *subtitleLabel = [[UILabel alloc]initWithFrame:CGRectMake(self.navigationController.view.bounds.size.width/2 - 50 + 10, self.navigationController.view.bounds.origin.y + 46, 100, 10)];
+    
+    subtitleLabel.text = @"indoor location";
+    subtitleLabel.font = FONT_LABELEE(10);
+    subtitleLabel.textAlignment = NSTextAlignmentCenter;
+    
+    [self.navigationController.view addSubview:subtitleLabel];
+    
+    UIImageView *logoView = [[UIImageView alloc]initWithFrame:CGRectMake(88 + 10, 27, 30, 30)];
+    
+    //logoView.backgroundColor = [UIColor greenColor];
+    logoView.image = [UIImage imageNamed:@"labeleelogo.png"];
+    
+    [self.navigationController.view addSubview:logoView];
+    
+    
+    
+    UIBarButtonItem *mapButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"map.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(showMap)];
+    
+    self.navigationItem.rightBarButtonItem = mapButton;
+    
+    
     
     // the delegate receives decode results
     self.zbarReaderView.readerDelegate = self;
 }
 
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    self.title = @"";
+    
+    self.view.opaque = NO;
+    self.view.backgroundColor = [UIColor clearColor];
+    
+    UIToolbar *instructionBar = [[UIToolbar alloc]initWithFrame:CGRectMake(self.view.frame.origin.x, self.view.frame.size.height -30, self.view.frame.size.width,30)];
+    //instructionBar.autoresizingMask = self.view.autoresizingMask;
+    //instructionBar.barTintColor = [UIColor whiteColor];
+    [self.view addSubview:instructionBar];
+    
+    
+    self.instructionLabel = [[UILabel alloc]initWithFrame:CGRectMake(instructionBar.bounds.origin.x + 5, instructionBar.bounds.origin.y + 4, 310, 22)];
+    self.instructionLabel.text = @"Enfoca nuestro código QR para posicionarte";
+    self.instructionLabel.textAlignment = NSTextAlignmentCenter;
+    
+    self.instructionLabel.font = FONT_LABELEE(14);
+    
+    [instructionBar addSubview:self.instructionLabel];
+    
+    
+}
+
 - (void) viewDidAppear: (BOOL) animated
 {
+    [super viewDidAppear:animated];
     // run the reader when the view is visible
     [self.zbarReaderView start];
 }
 
 - (void) viewWillDisappear: (BOOL) animated
 {
+    [super viewWillDisappear:animated];
+    
+    self.title = @"Scan";
     [self.zbarReaderView stop];
 }
 
@@ -49,6 +111,18 @@
 {
     // auto-rotation is supported
     return(YES);
+}
+
+- (void) showMap {
+    
+    NSLog(@"MOSTRAMOS EL MAPA SIN POSICIONAR");
+    
+    NSURL *url = [NSURL URLWithString:@"http://labelee.com/appmobile"];
+    
+    
+    LABrowserViewController *browserVC = [[LABrowserViewController alloc]initWithURL:url];
+    
+    [self.navigationController pushViewController:browserVC animated:YES];
 }
 
 - (void) willRotateToInterfaceOrientation: (UIInterfaceOrientation) orient

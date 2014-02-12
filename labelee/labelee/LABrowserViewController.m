@@ -36,6 +36,7 @@
     [self.browserView loadRequest:[NSURLRequest requestWithURL:self.url]];
     
     
+    
 }
 
 - (void)didReceiveMemoryWarning

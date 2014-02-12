@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		08D72AFB18AA9AE0007637EA /* labelee.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 08D72AFA18AA9AE0007637EA /* labelee.ttf */; };
 		96F38BD922F44FCA92DFEC8E /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3AA4812409BE45CF8ABE7EC1 /* libPods.a */; };
 		D0074DCB18A668EA0047890F /* LAScanViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0074DC918A668E90047890F /* LAScanViewController.m */; };
 		D0074DCC18A668EA0047890F /* LAScanViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D0074DCA18A668E90047890F /* LAScanViewController.xib */; };
@@ -37,6 +38,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		08D72AFA18AA9AE0007637EA /* labelee.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = labelee.ttf; sourceTree = "<group>"; };
 		2F1D97A973EC4BD9A346587E /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
 		3AA4812409BE45CF8ABE7EC1 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		D0074DC818A668E90047890F /* LAScanViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LAScanViewController.h; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 		D0543D9718A6545200BA5671 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				08D72AFA18AA9AE0007637EA /* labelee.ttf */,
 				D0543D9818A6545200BA5671 /* labelee-Info.plist */,
 				D0543D9918A6545200BA5671 /* InfoPlist.strings */,
 				D0543D9C18A6545200BA5671 /* main.m */,
@@ -247,6 +250,7 @@
 				D0074DD118A669940047890F /* LABrowserViewController.xib in Resources */,
 				D0543D9B18A6545200BA5671 /* InfoPlist.strings in Resources */,
 				D0074DCC18A668EA0047890F /* LAScanViewController.xib in Resources */,
+				08D72AFB18AA9AE0007637EA /* labelee.ttf in Resources */,
 				D0543DA318A6545200BA5671 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
