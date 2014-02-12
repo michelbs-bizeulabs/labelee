@@ -469,6 +469,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "labelee/labelee-Prefix.pch";
 				INFOPLIST_FILE = "labelee/labelee-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/michelbarbousalvador/Documents/BizeuLabs/labelee-REPO/labelee/labelee",
@@ -487,6 +488,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "labelee/labelee-Prefix.pch";
 				INFOPLIST_FILE = "labelee/labelee-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 6.0;
 				LIBRARY_SEARCH_PATHS = (
 					"$(inherited)",
 					"/Users/michelbarbousalvador/Documents/BizeuLabs/labelee-REPO/labelee/labelee",
