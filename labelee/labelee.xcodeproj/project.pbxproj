@@ -476,7 +476,7 @@
 					"/Users/Michel/Documents/labelee-REPO/labelee/labelee",
 				);
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "E8B71314-9C66-4D16-8489-CE44C4BE8D68";
+				PROVISIONING_PROFILE = "FE5BA92B-CE16-4E3E-A32A-CDE7C8B41127";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
