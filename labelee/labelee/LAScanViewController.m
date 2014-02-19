@@ -11,10 +11,16 @@
 #import "GAI.h"
 #import "GAIDictionaryBuilder.h"
 
+NSString * const SCANNED_PARKED_DATE = @"ScannedParkedDate";
+
 
 @interface LAScanViewController ()
 
+@property (strong,nonatomic)NSString *parkingURLSaved;
+
 @end
+
+
 
 @implementation LAScanViewController
 
@@ -60,10 +66,6 @@
     
     
     
-    UIBarButtonItem *mapButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"map.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(showMap)];
-    
-    self.navigationItem.rightBarButtonItem = mapButton;
-    
     
     
     // the delegate receives decode results
@@ -72,6 +74,41 @@
 
 - (void) viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    NSDate *lastParkedDated = [defaults objectForKey:SCANNED_PARKED_DATE];
+    
+    NSTimeInterval time = [lastParkedDated timeIntervalSinceNow];
+    
+    if (time >= 86400) {
+        
+        [defaults setObject:nil forKey:SCANNED_PARKED_DATE];
+        [defaults setObject:nil forKey:PARKED_CAR_KEY];
+    }
+    
+    // Obtenemos la url del QR de aparcamiento que ha sido guardada
+    
+    if ([defaults objectForKey:PARKED_CAR_KEY]) {
+        
+        self.parkingURLSaved = [defaults objectForKey:PARKED_CAR_KEY];
+        
+    }
+    
+    UIBarButtonItem *mapButton;
+    
+    if (self.parkingURLSaved) {
+        
+        mapButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"carMap.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(showParkingMap)];
+        
+    } else {
+        
+        mapButton = [[UIBarButtonItem alloc]initWithImage:[UIImage imageNamed:@"map.png"] style:UIBarButtonItemStyleBordered target:self action:@selector(showMap)];
+    }
+    
+    
+    
+    self.navigationItem.rightBarButtonItem = mapButton;
     
     self.title = @"";
     
@@ -181,6 +218,28 @@
     [self.navigationController pushViewController:browserVC animated:YES];
 }
 
+- (void) showParkingMap {
+    
+    NSLog(@"MOSTRAMOS EL MAPA DE PARKING");
+    
+    NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+    
+    
+    NSString *urlString = [defaults objectForKey:PARKED_CAR_KEY];
+    
+    // May return nil if a tracker has not already been initialized with a property
+    // ID.
+    id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
+    
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Map_action" action:@"show_parked_car_map" label:urlString value:nil]build]];
+    
+    NSURL *url = [NSURL URLWithString:urlString];
+    
+    LABrowserViewController *browserVC = [[LABrowserViewController alloc]initWithURL:url];
+    
+    [self.navigationController pushViewController:browserVC animated:YES];
+}
+
 - (void) willRotateToInterfaceOrientation: (UIInterfaceOrientation) orient
                                  duration: (NSTimeInterval) duration
 {
@@ -211,9 +270,24 @@
         NSLog(@"El codigo de barra leido es el %@ :",sym.data);
         
        NSString *urlString = [NSString stringWithFormat:@"%@",sym.data];
-        
+   
        NSURL *url = [NSURL URLWithString:urlString];
+       NSString *lastChar = [urlString substringWithRange:NSMakeRange([urlString length]-1, 1)];
+        NSLog(@"el ultimo caracter es %@",lastChar);
         
+        if ([lastChar isEqual:@"4"]) {
+            
+            NSDate *now = [NSDate date];
+            NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
+            [defaults setObject:urlString forKey:PARKED_CAR_KEY];
+            [defaults setObject:now forKey:SCANNED_PARKED_DATE];
+            
+            
+            
+            
+            [defaults synchronize];
+            
+        } 
         // May return nil if a tracker has not already been initialized with a property
         // ID.
         id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
