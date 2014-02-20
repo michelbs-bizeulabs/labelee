@@ -79,12 +79,13 @@ NSString * const SCANNED_PARKED_DATE = @"ScannedParkedDate";
     
     NSDate *lastParkedDated = [defaults objectForKey:SCANNED_PARKED_DATE];
     
-    NSTimeInterval time = [lastParkedDated timeIntervalSinceNow];
+    NSTimeInterval time = -[lastParkedDated timeIntervalSinceNow];
     
     if (time >= 86400) {
         
         [defaults setObject:nil forKey:SCANNED_PARKED_DATE];
         [defaults setObject:nil forKey:PARKED_CAR_KEY];
+        [defaults synchronize];
     }
     
     // Obtenemos la url del QR de aparcamiento que ha sido guardada
@@ -93,6 +94,10 @@ NSString * const SCANNED_PARKED_DATE = @"ScannedParkedDate";
         
         self.parkingURLSaved = [defaults objectForKey:PARKED_CAR_KEY];
         
+        
+    } else {
+        
+        self.parkingURLSaved = nil;
     }
     
     UIBarButtonItem *mapButton;
@@ -204,13 +209,13 @@ NSString * const SCANNED_PARKED_DATE = @"ScannedParkedDate";
     
     NSLog(@"MOSTRAMOS EL MAPA SIN POSICIONAR");
     
-    NSURL *url = [NSURL URLWithString:@"http://www.label.ee/appmobile"];
+    NSURL *url = [NSURL URLWithString:@"http://locmx.labelee.com/map/origin/32_89"];
     
     // May return nil if a tracker has not already been initialized with a property
     // ID.
     id<GAITracker> tracker = [[GAI sharedInstance] defaultTracker];
     
-    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Map_action" action:@"show_unlocated_map" label:@"http://www.label.ee/appmobile" value:nil]build]];
+    [tracker send:[[GAIDictionaryBuilder createEventWithCategory:@"Map_action" action:@"show_unlocated_map" label:@"http://locmx.labelee.com/map/origin/32_89" value:nil]build]];
     
     
     LABrowserViewController *browserVC = [[LABrowserViewController alloc]initWithURL:url];
@@ -275,16 +280,13 @@ NSString * const SCANNED_PARKED_DATE = @"ScannedParkedDate";
        NSString *lastChar = [urlString substringWithRange:NSMakeRange([urlString length]-1, 1)];
         NSLog(@"el ultimo caracter es %@",lastChar);
         
-        if ([lastChar isEqual:@"4"]) {
+        if ([lastChar isEqual:@"P"]) {
             
             NSDate *now = [NSDate date];
             NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
             [defaults setObject:urlString forKey:PARKED_CAR_KEY];
             [defaults setObject:now forKey:SCANNED_PARKED_DATE];
-            
-            
-            
-            
+  
             [defaults synchronize];
             
         } 
